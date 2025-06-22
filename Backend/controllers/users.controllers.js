@@ -2,55 +2,6 @@ import {Users} from '../models/attendace.model.js';
 import {Op, where} from 'sequelize';
 import bcrypt from "bcryptjs"
 
-export const createUsers = async (req, res) => {
-    try {
-
-        const {username, name, password, confirmPassword} = req.body;
-
-        if (!username || !name || !password || !confirmPassword) {
-            return res.status(400).json({
-                message: "required are field!",
-                status: false
-            })
-        }
-
-        let uCode = "T" + Math.floor(Math.random() * 10000).toString().padStart(4, '0')
-
-        const existingUserAndName = await Users.findOne({where: {
-            user_code: uCode,
-            name: name
-        }})
-
-        if (existingUserAndName) {
-            return res.status(400).json({
-                message: "Users is already",
-                status: false
-            })
-        }
-
-        const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
-
-        const newUser = await Users.create({
-            user_code: uCode,
-            username: username,
-            name: name,
-            password: hashPassword
-        });
-
-        res.status(201).json({
-            message: "Create user successfully",
-            status: true,
-            content: newUser
-        })
-
-    } catch (error) {
-        return res.status(500).json({
-            message: "Controller create user error: " + error,
-            status: false
-        })
-    }
-}
-
 export const getUsers = async(req, res) => {
     try {
         const user = await Users.findAll();
