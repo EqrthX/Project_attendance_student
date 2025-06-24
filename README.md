@@ -1,6 +1,6 @@
-# Student Monitoring with YOLOv8 + React + Express
+# Student Attendance with YOLOv8 + React + Express
 
-โปรเจคตรวจจับการตั้งใจเรียนของนักศึกษาแบบเรียลไทม์ผ่านกล้อง
+โปรเจคตรวจเช็คชื่อนักศึกษาผ่านกล้อง
 - YOLOv8 + Express (backend)
 - React + Recharts (frontend)
 
