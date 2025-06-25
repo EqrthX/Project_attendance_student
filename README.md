@@ -5,26 +5,25 @@
 - React + Recharts (frontend)
 
 ## วิธีใช้งาน
-uvicorn app:ชื่อไฟล์ที่รัน --reload 
 
 ### Backend
-
-### python
+## python
 ```bash
 cd face-scanner
 face-scanner> venv\Scripts\activate
 pip install -r requirements.txt
-python main.py
-```
+uvicorn app:ชื่อไฟล์ที่รัน --reload 
 
-### Express
+```
+## Express
 ```bash
 cd Backend
 npm install
 npm run dev
 ```
 
-### React
+### Frontend
+## React
 ```bash
 cd Frontend
 npm install
