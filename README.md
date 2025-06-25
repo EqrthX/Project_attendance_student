@@ -10,7 +10,6 @@ uvicorn app:ชื่อไฟล์ที่รัน --reload
 ### Backend
 ```bash
 cd face-scanner
-python -m venv yolov11_env
-source yolov11_env/bin/activate
+face-scanner> venv\Scripts\activate
 pip install -r requirements.txt
-python app.py
+python main.py
