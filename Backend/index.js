@@ -17,7 +17,7 @@ app.use(cors({
 app.use("/", loginRouter)
 app.use("/users", verifyToken ,userRouter);
 
-sequelize.sync({force: false})
+sequelize.sync({force: true})
     .then(() => {
     app.listen(3001, () => console.log(`Server on http://localhost:3001`))
     })

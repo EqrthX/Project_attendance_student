@@ -1,6 +1,4 @@
 import {Users} from '../models/attendace.model.js';
-import {Op, where} from 'sequelize';
-import bcrypt from "bcryptjs"
 
 export const getUsers = async(req, res) => {
     try {

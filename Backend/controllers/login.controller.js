@@ -1,5 +1,4 @@
 import {Users} from '../models/attendace.model.js';
-import {Op, where} from 'sequelize';
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 
